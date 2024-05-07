@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <LINK rel="icon" type="image/jpg" href="HB.jpg">
+    <style>
+   body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('photos/Hospital.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    margin: 20px auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+.signin-btn {
+    margin: 10px 0;
+    padding: 10px;
+    width: calc(100% - 22px); 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; 
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #6c63ff;
+}
+
+input[type="submit"] {
+    background-color: #6c63ff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #5a4af5;
+    transform: scale(1.1); 
+}
+
+.signin-btn {
+    background-color: transparent;
+    border: none;
+    color: #6c63ff;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.signin-btn:hover {
+    color: #5a4af5;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form input,
+.signin-btn {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="photos/relaxing-birds-and-piano-music-137153.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <header>
+        <h1>Healthy Bridge</h1>
+    </header>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="signupUsername" placeholder="Username" required><br>
+            <input type="password" id="signupPassword" placeholder="Password"  minlength="8"><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <button class="signin-btn" onclick="redirectToSignIn()">Already have an account? Sign In</button>
+    </div>
+
+    <script>
+        function redirectToSignIn() {
+            window.location.href = "2.html";
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('signupUsername').value;
+            var password = document.getElementById('signupPassword').value;
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+
+            if (users.some(user => user.username === username)) {
+                alert('Username already exists! Redirecting to sign-in page...');
+                window.location.href = "2.html";
+                return;
+            }
+
+            users.push({ username: username, password: password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Sign up successful!');
+            window.location.href = "2.html";
+        });
+    </script>
+</body>
+</html>
+
+
