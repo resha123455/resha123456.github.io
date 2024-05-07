@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sch.css">
+    <title>Schedule Appointment</title>
+</head>
+
+<body>
+    <audio autoplay loop>
+        <source src="photos/relaxing-birds-and-piano-music-137153.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <h1>Schedule Appointment</h1>
+    <form id="appointmentForm">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="stomach">stomach</option>
+            <option value=" physical_therapy"> physical_therapy</option>
+            <option value=" Orthopedics"> Orthopedics</option>
+            <option value="Endocrinology">Endocrinology</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="dental">dental</option>
+        </select><br><br>
+
+        <label for="message">Additional Notes:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Schedule Appointment">
+    </form>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var appointment = {
+                fullname: document.getElementById('fullname').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                department: document.getElementById('department').value
+            };
+            // Check if appointment exists
+            var appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+            var isConflict = appointments.some(function (existingAppointment) {
+                return existingAppointment.date === appointment.date &&
+                    existingAppointment.time === appointment.time &&
+                    existingAppointment.department === appointment.department;
+            });
+            if (isConflict) {
+                alert('Time slot unavailable, please choose another time');
+            } else {
+                appointments.push(appointment);
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+                window.location.href = 'confirmation.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

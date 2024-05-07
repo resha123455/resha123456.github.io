@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Surgery Page</title>
+
+    <style>    
+body {
+    font-family: Arial, sans-serif;
+    background-color: grey;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.surgery-box {
+    display: flex;
+    justify-content: space-between;
+    background-image: url(photos/docc.jpg);
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.surgery-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.surgery-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.surgery-description {
+    margin-top: 20px;
+    margin-bottom:20px ;
+    color:whitesmoke;
+    font-size: medium;
+}
+
+/* Hover effect */
+.surgery-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .surgery-box {
+        flex-direction: column;
+    }
+
+    .surgery-info {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <audio autoplay loop>
+        <source src="photos/relaxing-birds-and-piano-music-137153.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="container">
+        <div class="surgery-box">
+            <a href="sch.html" class="surgery-box">
+            <img src="photos/stomach.jpg" alt="Surgery stomach" width="200">
+            <div class="surgery-info">
+                <div class="surgery-title">stomach</div>
+                <div class="surgery-description">Examples of common abdominal procedures include those to remove the appendix (appendectomy), gall bladder removal, and hernia repair. We also perform operations to remove malignant tumors and lesions, as well as benign growths, such as lipomas.</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="surgery-box">
+            <a href="sch.html" class="surgery-box">
+            <img src="photos/physical.jpg" alt="Surgery physical_therapy" width="200">
+            <div class="surgery-info">
+                <div class="surgery-title">physical_therapy</div>
+                <div class="surgery-description">care for people of all ages who have functional problems resulting from back and neck injuries; sprains, strains, and fractures; arthritis; amputations; neurological disorders, such as stroke or cerebral palsy; injuries related to work and sports; and other conditions..</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="surgery-box">
+            <a href="sch.html" class="surgery-box">
+            <img src="photos/ortho.jpg" alt="Surgery Orthopedics " width="200">
+            <div class="surgery-info">
+                <div class="surgery-title">Orthopedics</div>
+                <div class="surgery-description"> is the medical specialty that focuses on injuries and diseases of your body's musculoskeletal system. This complex system, which includes your bones, joints, ligaments, tendons, muscles, and nerves, allows you to move, work, and be active.</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="surgery-box">
+            <a href="sch.html" class="surgery-box">
+            <img src="photos/endo.jpg" alt="Surgery Endocrinology" width="200">
+            <div class="surgery-info">
+                <div class="surgery-title">Endocrinology</div>
+                <div class="surgery-description">is the study of hormones and endocrine glands and organs. Hormone-secreting glands and certain organs in your body make up your endocrine system. A hormone is a chemical messenger that travels from one endocrine gland or organ in your body to another part of your body through your blood.</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="surgery-box">
+            <a href="sch.html" class="surgery-box">
+            <img src="photos/dete.jpg" alt="Surgery dermatology" width="200">
+            <div class="surgery-info">
+                <div class="surgery-title">dermatology</div>
+                <div class="surgery-description"> is the branch of medicine dealing with the skin. It is a speciality with both medical and surgical aspects. A dermatologist is a specialist medical doctor who manages diseases related to skin, hair, nails, and some cosmetic problems.</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="surgery-box">
+            <a href="sch.html" class="surgery-box">
+            <img src="photos/dental.jpg" alt="Surgery dental" width="200">
+            <div class="surgery-info">
+                <div class="surgery-title">dental</div>
+                <div class="surgery-description">There are several types of oral surgery procedures performed each year. Some of the most common include tooth extraction, dental bone grafts, dental implants, periodontal surgery, corrective jaw surgery, sleep apnea surgery and cleft lip and palate repair.</div>
+            </div>
+            </a>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
